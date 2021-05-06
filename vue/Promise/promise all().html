@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // let isResult1 = false;
+  // let isResult2 = false;
+  //
+  // $ajax({
+  //   url: '',
+  //   success: function () {
+  //     console.log('result1');
+  //     isResult1 = true;
+  //     handlerResult()
+  //   }
+  // })
+  //
+  // $ajax({
+  //   url: '',
+  //   success: function () {
+  //     console.log('result2');
+  //     isResult2 = true;
+  //     handlerResult()
+  //   }
+  // })
+  //
+  // function handlerResult() {
+  //   if (isResult1 && isResult2) {
+  //     console.log('success');
+  //   }
+  // }
+
+  Promise.all([
+    // new Promise((resolve, reject) => {
+    //   $ajax({
+    //     url: 'url1',
+    //     success: function (data) {
+    //       console.log(data);
+    //     }
+    //   })
+    // }),
+    // new Promise((resolve, reject) => {
+    //   $ajax({
+    //     url: 'url2',
+    //     success: function (data) {
+    //       console.log(data);
+    //     }
+    //   })
+    // })
+
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({name: 'luv', age: 22})
+      }, 2000)
+    }),
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('res2')
+      }, 1000)
+    })
+  ]).then(result => {
+    console.log(result);
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve('aaa')
+    }, 2000)
+  }).then(res => {
+    console.log(res);
+
+    return new Promise((resolve,reject) => {
+      setTimeout(() => {
+        resolve(res + '111')
+        reject('err')
+      }, 2000)
+    }).then(res => {
+      console.log(res);
+
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(res + '222')
+        }, 2000)
+      }).then(res => {
+        console.log(res);
+      }).catch(err=>{
+        console.log(err);
+      })
+    })
+  })
+
+  // 简写
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve('aaa')
+    }, 2000)
+  }).then(res => {
+    console.log(res);
+
+    return Promise.resolve(res + '111')
+  }).then(res => {
+    console.log(res);
+
+    return Promise.resolve(res + '222')
+  }).then(res => {
+    console.log(res);
+  })
+
+  // 再次简写
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('aaa')
+    }, 2000)
+  }).then(res => {
+    console.log(res);
+
+    return Promise.reject ('error')
+  }).then(res => {
+    console.log(res);
+
+    return (res + '222')
+  }).then(res => {
+    console.log(res);
+  }).catch(err=>{
+    console.log(err);
+  })
+
+
+</script>
+</body>
+</html>
