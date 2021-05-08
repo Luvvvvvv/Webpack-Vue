@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vue/tabber" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vue/vuerouter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vue/vuexbase" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webpack" vcs="Git" />
+  </component>
+</project>
